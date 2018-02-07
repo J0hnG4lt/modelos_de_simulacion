@@ -13,7 +13,7 @@ from numpy.random import choice
 import numpy as np
 
 # (Clientes por hora)*(factor de conversión a minuto)
-mu = 60*(60)
+mu = 1
 
 # Intervalo de tiempo de servicio en minutos
 tiempos_servicio = [3,5]
@@ -37,14 +37,14 @@ def decline(queue_length) :
 
 horas = 0
 llegadas = []
-max_horas = 8*(1/60) # en minutos
+max_horas = 8*(60) # en minutos
 tiempo_de_llegada = 0
 
 while (horas < max_horas) :
     
     # Llega un cliente
     tiempo_de_llegada = exponential(scale = (1/mu))
-    #print(tiempo_de_llegada)
+    print(tiempo_de_llegada)
     
     horas += tiempo_de_llegada
     
@@ -143,6 +143,7 @@ for cliente in clientes :
 
 print()
 print()
+print("Cantidad de clientes que llegaron: ", len(llegadas))
 print("Tiempo de espera promedio de un cliente (minutos): ", np.mean(tiempos_de_espera))
 print("Porcentaje de clientes que declinan: ", ((len(llegadas)-clientes_que_se_quedan)/len(llegadas))*100)
 for i in range(4) :

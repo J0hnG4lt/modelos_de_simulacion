@@ -13,7 +13,7 @@ from numpy.random import choice
 import numpy as np
 
 # (Clientes por hora)*(factor de conversión a minuto)
-mu = 60*(60)
+mu = 1
 
 # Intervalo de tiempo de servicio en minutos
 tiempos_servicio = [3,5]
@@ -37,7 +37,7 @@ def decline(queue_length) :
 
 horas = 0
 llegadas = []
-max_horas = 8*(1/60) # en minutos
+max_horas = 8*(60) # en minutos
 tiempo_de_llegada = 0
 
 while (horas < max_horas) :
