@@ -51,16 +51,16 @@ def simular(mu = 1,
             tiempos_servicio = [3, 5],
             max_horas = 480) :
     # (Clientes por hora)*(factor de conversión a minuto)
-    mu = 1
+    #mu = 1
 
     # Intervalo de tiempo de servicio en minutos
-    tiempos_servicio = [3,5]
+    #tiempos_servicio = [3,5]
 
     # Se calculan las llegadas pues son independientes de la atención
 
     horas = 0
     llegadas = []
-    max_horas = 8*(60) # en minutos
+    #max_horas = 8*(60) # en minutos
     tiempo_de_llegada = 0
 
     while (horas < max_horas) :
